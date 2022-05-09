@@ -2,7 +2,7 @@
 	"components" : 
 	[
 		{
-			"id" : "res3",
+			"id" : "res1",
 			"netlist" : 
 			{
 				"t1" : "vdd",
@@ -33,5 +33,5 @@
 			"type" : "nmos"
 		}
 	],
-	"id" : "topology2"
+	"id" : "top1"
 }

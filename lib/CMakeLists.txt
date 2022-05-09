@@ -3,6 +3,7 @@ project(TopologyAPI)
 
 set(CMAKE_BUILD_TYPE Release)
 
+include_directories(include)
+
 file(GLOB SOURCES "*.cpp")
-add_library(TopologyAPI STATIC ${SOURCES})
-target_include_directories(TopologyAPI PRIVATE include)
+add_library(Json STATIC ${SOURCES})
