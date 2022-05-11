@@ -2,17 +2,17 @@ make: Entering directory '/home/mohammed/TopologyAPI_task02/build'
 Running tests...
 Test project /home/mohammed/TopologyAPI_task02/build
     Start 1: API.ReadJSONTest
-1/9 Test #1: API.ReadJSONTest ..................   Passed    0.00 sec
+1/9 Test #1: API.ReadJSONTest ..................   Passed    0.01 sec
     Start 2: API.TopologyListSizeTest
-2/9 Test #2: API.TopologyListSizeTest ..........   Passed    0.00 sec
+2/9 Test #2: API.TopologyListSizeTest ..........   Passed    0.01 sec
     Start 3: API.SetAndGetIDTest
-3/9 Test #3: API.SetAndGetIDTest ...............   Passed    0.01 sec
+3/9 Test #3: API.SetAndGetIDTest ...............   Passed    0.00 sec
     Start 4: API.QueryDevicesTest
 4/9 Test #4: API.QueryDevicesTest ..............   Passed    0.00 sec
     Start 5: API.SetAndGetDeviceIDTest
-5/9 Test #5: API.SetAndGetDeviceIDTest .........   Passed    0.00 sec
+5/9 Test #5: API.SetAndGetDeviceIDTest .........   Passed    0.01 sec
     Start 6: API.QueryDevicesAPITest
-6/9 Test #6: API.QueryDevicesAPITest ...........   Passed    0.00 sec
+6/9 Test #6: API.QueryDevicesAPITest ...........   Passed    0.01 sec
     Start 7: API.DeviceListSizeTest
 7/9 Test #7: API.DeviceListSizeTest ............   Passed    0.00 sec
     Start 8: API.QueryDevicesWithNetlistNode
