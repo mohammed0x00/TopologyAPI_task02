@@ -1,0 +1,3 @@
+/home/mohammed/TopologyAPI_task02/build/_deps/googletest-src/googletest/src/gtest.cc:5342:34: error: Null pointer dereference: static_cast<volatile int*>(nullptr) [nullPointer]
+      *static_cast<volatile int*>(nullptr) = 1;
+                                 ^
