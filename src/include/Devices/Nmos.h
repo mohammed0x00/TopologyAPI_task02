@@ -1,9 +1,28 @@
-/*
- * Nmos.h
+/*******************************************************************************
+ * @file    Nmos.h
+ * @author  Mohammed Ali
+ * @email   mmansour.mm5@gmailcom
+ * @website https://github.com/mohammed0x00/
+ * @date    10.05.2022
  *
- *  Created on: May 6, 2022
- *      Author: mohammed
- */
+ * @brief   Nmos Class
+ * @note
+ *
+@verbatim
+Copyright (C) 2022
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program.  If not, see <http://www.gnu.org/licenses/>.
+@endverbatim
+*******************************************************************************/
 
 #ifndef NMOS_H_
 #define NMOS_H_
@@ -12,46 +31,103 @@
 #include "Device.h"
 
 /* ------ Define ------ */
+
+/**
+ * @brief  String of nmos type device.
+ */
 #define NMOS_TYPE_STRING	(std::string) "nmos"
+
+/**
+ * @brief  Number of netlist nodes for each nmos object.
+ */
 #define NMOS_NETLIST_NODES  3
 
-/* Nmos class inherates the device class */
+/**
+ * @brief  Nmos class
+ */
 class Nmos : public Device{
 public:
 
 	/* define required data-types */
+	
+	/**
+	 * @brief  A node in the MlType struct.
+	 * @note It can be casted to std::string.
+	 */
 	typedef double MlNode;
-	enum NetlistNodeIndex {drain, gate, source};
-
+	
+	/**
+	 * @brief   The index of a netlist node.
+	 */
+	enum NetlistNodeIndex {
+		drain, /*!< Drain node index */
+		gate, /*!< Gate node index */
+		source /*!< Source node index */
+	};
+	
+	/**
+	 * @brief   M(l) values of the resistor.
+	 */
 	typedef struct {
-		MlNode def;
-		MlNode min;
-		MlNode max;
+		MlNode def; /*!< Default M(l) value. */
+		MlNode min; /*!< Default M(l) value. */
+		MlNode max; /*!< Default M(l) value. */
 	} MlType;
 
 	/* Public functions */
+	
+	/**
+	 * @brief  Constructor of Nmos class.
+	 * It initializes the Device type as Nmos device.
+	 */
 	Nmos();
+	
+	/**
+	 * @brief  Destructor of Nmos class.
+	 */
 	virtual ~Nmos();
 
-	/* Set a node in the netlist. The node is pointed by NetlistNodeIndex node
-	   The argument NetlistNode value can be casted to string
-	   Note : Resistor has 3 nodes drain, gate and source.
+	/**
+	 * @brief  Set a netlist node value.
+	 * @param  node: The index of the netlist node
+	 * @retval value: netlist node value
+	 * @note Nmos has 2 nodes drain, gate and source.
+	 * @note NetlistNode type can be casted to std::string.
 	 */
 	void setNetlistNode(NetlistNodeIndex node, NetlistNode value);
 
-	/* Returns the node in of netlist that is pointed by NetlistNodeIndex node */
+	/**
+	 * @brief  Get a netlist node value.
+	 * @param  node: The index of the netlist node
+	 * @retval Node value
+	 * @note Nmos has 2 nodes drain, gate and source.
+	 * @note NetlistNode type can be casted to std::string.
+	 */
 	NetlistNode getNetlistNode(NetlistNodeIndex node);
 
-	/* Set M(l) of the Nmos */
+	/**
+	 * @brief  Set the M(l) value of the Nmos.
+	 * @param  def: Default M(l) value
+	 * @param  min: Minimum M(l) value
+	 * @param  max: Maximum M(l) value
+	 * @retval None
+	 */
 	void setMl(MlNode def, MlNode min, MlNode max);
 
-	/* Returns a struct of MlNode that represents M(l) */
+	/**
+	 * @brief  Get the M(l) values.
+	 * @param  None
+	 * @retval A pointer to the M(l) struct
+	 * @note See MlType.
+	 */
 	const MlType * getMl();
 
 private:
 
-	/* Netlist array of 3 elements min, max, default */
+	/** Array of type NetlistNode to store the netlist nodes. */
 	NetlistNode netlist[NMOS_NETLIST_NODES];
+	
+	/** object of MlType struct to store the M(l) values. */
 	MlType ml;
 };
 
