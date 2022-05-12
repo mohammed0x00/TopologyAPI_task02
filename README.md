@@ -30,7 +30,7 @@ API to read a json file, parse it and represent it in classes
 ## Build
 Build process is done using CMake build tool.
 See log files: [Build Log], [Build Errors].
-![build screenshot](screenshots/build.png)
+![build screenshot](https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/screenshots/build.png)
 See [CMakeLists.txt].
 
 ## Test
@@ -38,12 +38,12 @@ Test process is done using Google-Test library.
 See log files: [Test Log], [Test Errors].
 > Currently, only API tests are available. Other units will be tested soon.
 
-![test screenshot](screenshots/test.png)
+![test screenshot](https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/screenshots/test.png)
 
 ## Code analysis
 Code analysis process is done using Cppcheck tool.
 See log files: [Analysis Log], [Analysis Errors].
-![analusis screenshot](screenshots/analysis.png)
+![analusis screenshot](https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/screenshots/analysis.png)
 
 [jsoncpp library]: <https://github.com/open-source-parsers/jsoncpp>
 [Google-Test]: <https://github.com/google/googletest>
