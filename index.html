@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Topology API: Main Page</title>
+<title>Topology API: TopologyAPI_task02</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,10 +61,57 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Topology API Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">TopologyAPI_task02 </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p ><a class="anchor" id="md_README"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Overview</h1>
+<p ><a class="el" href="class_a_p_i.html" title="Contain APIs required to read electronic devices topology from a Json file, modify it and write it ba...">API</a> to read a json file, parse it and represent it in classes</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Features</h1>
+<ul>
+<li>Support add/remove topology operations.</li>
+<li>Support query devices using netlist node ID.</li>
+<li>Implemented in C++.</li>
+<li>Use CMake build tool.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Documentation</h1>
+<p ><a href="https://mohammed0x00.github.io/TopologyAPI_task02/&gt;">TopologyAPI Documentation</a> is generated using <a href="https://www.doxygen.nl/&gt;">Doxygen</a>.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+General Info.</h1>
+<ul>
+<li>C++ language.</li>
+<li><a href="https://github.com/open-source-parsers/jsoncpp&gt;">jsoncpp library</a></li>
+<li><a href="https://github.com/google/googletest&gt;">Google-Test</a></li>
+<li><a href="https://cmake.org/&gt;">CMake</a></li>
+<li><a href="https://cppcheck.sourceforge.io/&gt;">Cppcheck</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Why C++ ?</h1>
+<ul>
+<li>The main advantage in my opinion is that C++, compared to other object-oriented languages, is faster.</li>
+<li>C++ is pretty much compatible with C.</li>
+<li>Scalability refers to the ability of a program to scale. It means that the C++ program is capable of running on a small scale as well as a large scale of data.</li>
+<li>C++ gives the programmer the provision of total control over memory management.(eg. comparing with Java)</li>
+<li>Since C++ is closely associated with C, C++ allows low-level manipulation of data at a certain level.</li>
+<li>In some cases other languages that run on a run-time environment - that can be considered as portable languages - may be non-portable.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Build</h1>
+<p >Build process is done using CMake build tool. See log files: <a href="https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/log/build_log&gt;">Build Log</a>, <a href="https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/log/build_errors&gt;">Build Errors</a>. <img src="screenshots/build.png" alt="build screenshot" class="inline"/> See <a href="https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/CMakeLists.txt&gt;">CMakeLists.txt</a>.</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Test</h1>
+<p >Test process is done using Google-Test library. See log files: <a href="https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/log/test_log&gt;">Test Log</a>, <a href="https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/log/test_errors&gt;">Test Errors</a>. </p><blockquote class="doxtable">
+<p >&zwj;Currently, only <a class="el" href="class_a_p_i.html" title="Contain APIs required to read electronic devices topology from a Json file, modify it and write it ba...">API</a> tests are available. Other units will be tested soon. </p>
+</blockquote>
+<p><img src="screenshots/test.png" alt="test screenshot" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Code analysis</h1>
+<p >Code analysis process is done using Cppcheck tool. See log files: <a href="https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/log/analysis_log&gt;">Analysis Log</a>, <a href="https://github.com/mohammed0x00/TopologyAPI_task02/blob/main/log/analysis_errors&gt;">Analysis Errors</a>. <img src="screenshots/analysis.png" alt="analusis screenshot" class="inline"/> </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
