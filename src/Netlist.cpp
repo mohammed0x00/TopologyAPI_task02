@@ -1,11 +1,11 @@
 /*******************************************************************************
- * @file    Resistor.cpp
+ * @file    Netlist.cpp
  * @author  Mohammed Ali
  * @email   mmansour.mm5@gmailcom
  * @website https://github.com/mohammed0x00/
  * @date    10.05.2022
  *
- * @brief   Resistor Class source file
+ * @brief   Netlist Class source file
  * @note
  *
 @verbatim
@@ -26,32 +26,27 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 /* ------ Include ------ */
-#include "Devices/Resistor.h"
+#include "Attributes/Netlist.h"
 
 /* ------ Functions ------ */
-/* Reinitialize the device type as resistor */
-Resistor::Resistor()
+
+Netlist::Netlist(int size)
 {
-	type = resistor;
-	netlist = new Netlist(RESISTOR_NETLIST_NODES);
+	nodes = new std::string[size];
 }
 
-/* Delete netlist object */
-Resistor::~Resistor()
+
+Netlist::~Netlist()
 {
-	delete netlist;
+	delete[] nodes;
 }
 
-/* Set the resistance value of the resistor */
-void Resistor::setResistance(unsigned int def, unsigned int min, unsigned int max)
+void Netlist::setNode(int index, std::string value)
 {
-	resistance.setDefaultValue(def);
-	resistance.setMinimumValue(min);
-	resistance.setMaximumValue(max);
+	nodes[index] = value;
 }
 
-/* Returns an object Resistance data type */
-Resistance Resistor::getResistance()
+std::string Netlist::getNode(int index)
 {
-	return resistance;
+	return nodes[index];
 }

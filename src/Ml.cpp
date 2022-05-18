@@ -1,11 +1,11 @@
 /*******************************************************************************
- * @file    Resistor.cpp
+ * @file    Ml.cpp
  * @author  Mohammed Ali
  * @email   mmansour.mm5@gmailcom
  * @website https://github.com/mohammed0x00/
  * @date    10.05.2022
  *
- * @brief   Resistor Class source file
+ * @brief   Ml Class source file
  * @note
  *
 @verbatim
@@ -26,32 +26,61 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 /* ------ Include ------ */
-#include "Devices/Resistor.h"
+#include "Attributes/Ml.h"
 
 /* ------ Functions ------ */
-/* Reinitialize the device type as resistor */
-Resistor::Resistor()
+/* Empty constructor */
+Ml::Ml()
 {
-	type = resistor;
-	netlist = new Netlist(RESISTOR_NETLIST_NODES);
+
 }
 
-/* Delete netlist object */
-Resistor::~Resistor()
+/* Initialize the values */
+Ml::Ml(double def, double min, double max)
 {
-	delete netlist;
+	setDefaultValue(def);
+	setMinimumValue(min);
+	setMaximumValue(max);
 }
 
-/* Set the resistance value of the resistor */
-void Resistor::setResistance(unsigned int def, unsigned int min, unsigned int max)
+/* Empty destructor */
+Ml::~Ml()
 {
-	resistance.setDefaultValue(def);
-	resistance.setMinimumValue(min);
-	resistance.setMaximumValue(max);
+
 }
 
-/* Returns an object Resistance data type */
-Resistance Resistor::getResistance()
+/* Set the default ml value */
+void Ml::setDefaultValue(double value)
 {
-	return resistance;
+	def = value;
+}
+
+/* Set the minimum ml value */
+void Ml::setMinimumValue(double value)
+{
+	min = value;
+}
+
+/* Set the maximum ml value */
+void Ml::setMaximumValue(double value)
+{
+	max = value;
+}
+
+/* Get the default ml value */
+double Ml::getDefaultValue()
+{
+	return def;
+}
+
+/* Get the minimum ml value */
+double Ml::getMinimumValue()
+{
+	return min;
+}
+
+/* Get the maximum ml value */
+double Ml::getMaximumValue()
+{
+	return max;
 }

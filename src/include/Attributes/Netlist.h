@@ -1,11 +1,11 @@
 /*******************************************************************************
- * @file    Nmos.h
+ * @file    Netlist.h
  * @author  Mohammed Ali
  * @email   mmansour.mm5@gmailcom
  * @website https://github.com/mohammed0x00/
- * @date    10.05.2022
+ * @date    15.05.2022
  *
- * @brief   Nmos Class
+ * @brief   Netlist Class
  * @note
  *
 @verbatim
@@ -24,67 +24,53 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 @endverbatim
 *******************************************************************************/
 
-#ifndef NMOS_H_
-#define NMOS_H_
+#ifndef NETLIST_H_
+#define NETLIST_H_
 
 /* ------ Include ------ */
-#include "Device.h"
-#include "Attributes/Ml.h"
-
-/* ------ Define ------ */
+#include <string>
 
 /**
- * @brief  String of nmos type device.
+ * @brief  Netlist class
  */
-#define NMOS_TYPE_STRING	(std::string) "nmos"
-
-/**
- * @brief  Number of netlist nodes for each nmos object.
- */
-#define NMOS_NETLIST_NODES			3
-#define NMOS_NETLIST_NODE_DRAIN 	0
-#define NMOS_NETLIST_NODE_GATE 		1
-#define NMOS_NETLIST_NODE_SOURCE  	2
-
-
-/**
- * @brief  Nmos class
- */
-class Nmos : public Device{
+class Netlist {
 public:
 	/* Public functions */
 	
 	/**
-	 * @brief  Constructor of Nmos class.
-	 * It initializes the Device type as Nmos device.
+	 * @brief  Constructor of Netlist class.
+	 * Initializes an array with the required size.
+	 * @param  size: Size of netlist.
 	 */
-	Nmos();
-	
-	/**
-	 * @brief  Destructor of Nmos class.
-	 */
-	virtual ~Nmos();
+	Netlist(int size);
 
 	/**
-	 * @brief  Set the M(l) value of the Nmos.
-	 * @param  def: Default M(l) value
-	 * @param  min: Minimum M(l) value
-	 * @param  max: Maximum M(l) value
+	 * @brief  Destructor of Device class.
+	 */
+	virtual ~Netlist();
+
+
+	/**
+	 * @brief  Set a netlist node value.
+	 * @param  index: Index of the node
+	 * @param  value: Node value
 	 * @retval None
 	 */
-	void setMl(double def, double min, double max);
+	void setNode(int index, std::string value);
 
 	/**
-	 * @brief  Get the M(l) values.
-	 * @param  None
-	 * @retval M(l) of the nmos.
+	 * @brief  Get a netlist node value.
+	 * @param  index: Index of the node
+	 * @retval Node value
 	 */
-	Ml getMl();
+	std::string getNode(int index);
 
 private:
-	
-	/** Object of Ml data type to store the M(l) values. */
-	Ml ml;
+
+	/** Vector to store netlist nodes */
+	std::string * nodes;
+
+
 };
 
-#endif /* NMOS_H_ */
+#endif /* NETLIST_H_ */

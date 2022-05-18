@@ -78,33 +78,33 @@ API::Result API::readJSON(FileName file)
         	if(type == RESISTOR_TYPE_STRING)
         	{
         		Resistor * newResistor = new Resistor();
-        		Resistor::ResistanceNode def = component["resistance"]["default"].asUInt();
-        		Resistor::ResistanceNode min = component["resistance"]["min"].asUInt();
-        		Resistor::ResistanceNode max = component["resistance"]["max"].asUInt();
-        		Device::NetlistNode t1 = component["netlist"]["t1"].asString();
-        		Device::NetlistNode t2 = component["netlist"]["t2"].asString();
+        		unsigned int def = component["resistance"]["default"].asUInt();
+        		unsigned int min = component["resistance"]["min"].asUInt();
+        		unsigned int max = component["resistance"]["max"].asUInt();
+        		std::string t1 = component["netlist"]["t1"].asString();
+        		std::string t2 = component["netlist"]["t2"].asString();
         		newTopology->addDevice(newResistor);
         		newResistor->setID(component["id"].asString());
         		newResistor->setResistance(def, min, max);
-        		newResistor->setNetlistNode(Resistor::T1, t1);
-        		newResistor->setNetlistNode(Resistor::T2, t2);
+        		newResistor->setNetlistNode(RESISTOR_NETLIST_NODE_T1, t1);
+        		newResistor->setNetlistNode(RESISTOR_NETLIST_NODE_T2, t2);
 
         	}
         	else if(type == NMOS_TYPE_STRING)
         	{
         		Nmos * newNmos = new Nmos();
-        		Nmos::MlNode def = component["m(l)"]["default"].asDouble();
-        		Nmos::MlNode min = component["m(l)"]["min"].asDouble();
-        		Nmos::MlNode max = component["m(l)"]["max"].asDouble();
-        		Device::NetlistNode drain = component["netlist"]["drain"].asString();
-        		Device::NetlistNode gate = component["netlist"]["gate"].asString();
-        		Device::NetlistNode source = component["netlist"]["source"].asString();
+        		double def = component["m(l)"]["default"].asDouble();
+        		double min = component["m(l)"]["min"].asDouble();
+        		double max = component["m(l)"]["max"].asDouble();
+        		std::string drain = component["netlist"]["drain"].asString();
+        		std::string gate = component["netlist"]["gate"].asString();
+        		std::string source = component["netlist"]["source"].asString();
         		newTopology->addDevice(newNmos);
         		newNmos->setID(component["id"].asString());
         		newNmos->setMl(def, min, max);
-        		newNmos->setNetlistNode(Nmos::drain, drain);
-        		newNmos->setNetlistNode(Nmos::gate, gate);
-        		newNmos->setNetlistNode(Nmos::source, source);
+        		newNmos->setNetlistNode(NMOS_NETLIST_NODE_DRAIN, drain);
+        		newNmos->setNetlistNode(NMOS_NETLIST_NODE_GATE, gate);
+        		newNmos->setNetlistNode(NMOS_NETLIST_NODE_SOURCE, source);
         	}
         	else
         	{
@@ -166,14 +166,14 @@ API::Result API::writeJSON(Topology::TopologyIdType id)
 			{
 				Resistor * res = (Resistor *)dev;
 				Json::Value jsonResistor, jsonNetlist, jsonResistance;
-				const Resistor::ResistanceType * resistance = res->getResistance();
+				Resistance resistance = res->getResistance();
 				jsonResistor["type"] = RESISTOR_TYPE_STRING;
 				jsonResistor["id"] = ((std::string)res->getID());
-				jsonNetlist["t1"] = ((std::string)res->getNetlistNode(Resistor::T1));
-				jsonNetlist["t2"] = ((std::string)res->getNetlistNode(Resistor::T2));
-				jsonResistance["default"] = (int)(resistance->def);
-				jsonResistance["min"] = (int)(resistance->min);
-				jsonResistance["max"] = (int)(resistance->max);
+				jsonNetlist["t1"] = res->getNetlistNode(RESISTOR_NETLIST_NODE_T1);
+				jsonNetlist["t2"] = res->getNetlistNode(RESISTOR_NETLIST_NODE_T2);
+				jsonResistance["default"] = (int)(resistance.getDefaultValue());
+				jsonResistance["min"] = (int)(resistance.getMinimumValue());
+				jsonResistance["max"] = (int)(resistance.getMaximumValue());
 				jsonResistor["resistance"] = jsonResistance;
 				jsonResistor["netlist"] = jsonNetlist;
 				components.append(jsonResistor);
@@ -182,15 +182,15 @@ API::Result API::writeJSON(Topology::TopologyIdType id)
 			{
 				Nmos * nmos = (Nmos *)dev;
 				Json::Value jsonNmos, jsonNetlist, jsonMl;
-				const Nmos::MlType * ml = nmos->getMl();
+				Ml ml = nmos->getMl();
 				jsonNmos["type"] = NMOS_TYPE_STRING;
 				jsonNmos["id"] = ((std::string)nmos->getID());
-				jsonNetlist["drain"] = ((std::string)nmos->getNetlistNode(Nmos::drain));
-				jsonNetlist["gate"] = ((std::string)nmos->getNetlistNode(Nmos::gate));
-				jsonNetlist["source"] = ((std::string)nmos->getNetlistNode(Nmos::source));
-				jsonMl["default"] = (double)(ml->def);
-				jsonMl["min"] = (double)(ml->min);
-				jsonMl["max"] = (double)(ml->max);
+				jsonNetlist["drain"] = nmos->getNetlistNode(NMOS_NETLIST_NODE_DRAIN);
+				jsonNetlist["gate"] = nmos->getNetlistNode(NMOS_NETLIST_NODE_GATE);
+				jsonNetlist["source"] = nmos->getNetlistNode(NMOS_NETLIST_NODE_SOURCE);
+				jsonMl["default"] = ml.getDefaultValue();
+				jsonMl["min"] = ml.getMinimumValue();
+				jsonMl["max"] = ml.getMaximumValue();
 				jsonNmos["m(l)"] = jsonMl;
 				jsonNmos["netlist"] = jsonNetlist;
 				components.append(jsonNmos);
@@ -239,7 +239,7 @@ Topology::DeviceList API::queryDevices(Topology::TopologyIdType id)
 	return {NULL, 0};
 }
 
-Topology::DeviceList API::queryDevicesWithNetlistNode(Topology::TopologyIdType topology_id, Device::NetlistNode node_id)
+Topology::DeviceList API::queryDevicesWithNetlistNode(Topology::TopologyIdType topology_id, std::string node_id)
 {
 	std::vector<Topology::DeviceListElement> * list = new std::vector<Topology::DeviceListElement>;
 	Topology::DeviceList toReturn;
@@ -253,12 +253,12 @@ Topology::DeviceList API::queryDevicesWithNetlistNode(Topology::TopologyIdType t
 				Device * dev = top->getDevices().list[i];
 				if(dev->getType() == Device::resistor)
 				{
-					if(((Resistor *)dev)->getNetlistNode(Resistor::T1) == node_id)
+					if(((Resistor *)dev)->getNetlistNode(RESISTOR_NETLIST_NODE_T1) == node_id)
 					{
 						list->push_back(dev);
 						(toReturn.size)++;
 					}
-					else if(((Resistor *)dev)->getNetlistNode(Resistor::T2) == node_id)
+					else if(((Resistor *)dev)->getNetlistNode(RESISTOR_NETLIST_NODE_T2) == node_id)
 					{
 						list->push_back(dev);
 						(toReturn.size)++;
@@ -266,17 +266,17 @@ Topology::DeviceList API::queryDevicesWithNetlistNode(Topology::TopologyIdType t
 				}
 				else if(dev->getType() == Device::nmos)
 				{
-					if(((Nmos *)dev)->getNetlistNode(Nmos::drain) == node_id)
+					if(((Nmos *)dev)->getNetlistNode(NMOS_NETLIST_NODE_DRAIN) == node_id)
 					{
 						list->push_back(dev);
 						(toReturn.size)++;
 					}
-					else if(((Nmos *)dev)->getNetlistNode(Nmos::gate) == node_id)
+					else if(((Nmos *)dev)->getNetlistNode(NMOS_NETLIST_NODE_GATE) == node_id)
 					{
 						list->push_back(dev);
 						(toReturn.size)++;
 					}
-					else if(((Nmos *)dev)->getNetlistNode(Nmos::source) == node_id)
+					else if(((Nmos *)dev)->getNetlistNode(NMOS_NETLIST_NODE_SOURCE) == node_id)
 					{
 						list->push_back(dev);
 						(toReturn.size)++;

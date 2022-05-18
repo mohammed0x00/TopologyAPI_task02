@@ -57,3 +57,13 @@ Device::DeviceType Device::getType()
 {
 	return type;
 }
+
+void Device::setNetlistNode(int index, std::string value)
+{
+	netlist->setNode(index, value);
+}
+
+std::string Device::getNetlistNode(int index)
+{
+	return netlist->getNode(index);
+}

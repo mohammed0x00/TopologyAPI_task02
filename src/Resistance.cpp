@@ -1,11 +1,11 @@
 /*******************************************************************************
- * @file    Resistor.cpp
+ * @file    Resistance.cpp
  * @author  Mohammed Ali
  * @email   mmansour.mm5@gmailcom
  * @website https://github.com/mohammed0x00/
  * @date    10.05.2022
  *
- * @brief   Resistor Class source file
+ * @brief   Resistance Class source file
  * @note
  *
 @verbatim
@@ -26,32 +26,61 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 /* ------ Include ------ */
-#include "Devices/Resistor.h"
+#include "Attributes/Resistance.h"
 
 /* ------ Functions ------ */
-/* Reinitialize the device type as resistor */
-Resistor::Resistor()
+/* Empty constructor */
+Resistance::Resistance()
 {
-	type = resistor;
-	netlist = new Netlist(RESISTOR_NETLIST_NODES);
+
 }
 
-/* Delete netlist object */
-Resistor::~Resistor()
+/* Initialize the values */
+Resistance::Resistance(unsigned int def, unsigned int min, unsigned int max)
 {
-	delete netlist;
+	setDefaultValue(def);
+	setMinimumValue(min);
+	setMaximumValue(max);
 }
 
-/* Set the resistance value of the resistor */
-void Resistor::setResistance(unsigned int def, unsigned int min, unsigned int max)
+/* Empty destructor */
+Resistance::~Resistance()
 {
-	resistance.setDefaultValue(def);
-	resistance.setMinimumValue(min);
-	resistance.setMaximumValue(max);
+
 }
 
-/* Returns an object Resistance data type */
-Resistance Resistor::getResistance()
+/* Set the default resistance value */
+void Resistance::setDefaultValue(unsigned int value)
 {
-	return resistance;
+	def = value;
+}
+
+/* Set the minimum resistance value */
+void Resistance::setMinimumValue(unsigned int value)
+{
+	min = value;
+}
+
+/* Set the maximum resistance value */
+void Resistance::setMaximumValue(unsigned int value)
+{
+	max = value;
+}
+
+/* Get the default resistance value */
+unsigned int Resistance::getDefaultValue()
+{
+	return def;
+}
+
+/* Get the minimum resistance value */
+unsigned int Resistance::getMinimumValue()
+{
+	return min;
+}
+
+/* Get the maximum resistance value */
+unsigned int Resistance::getMaximumValue()
+{
+	return max;
 }

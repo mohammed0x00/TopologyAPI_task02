@@ -29,6 +29,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* ------ Include ------ */
 #include "Device.h"
+#include "Attributes/Resistance.h"
 
 /**
  * @brief  String of resistor type device.
@@ -38,39 +39,15 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 /**
  * @brief  Number of netlist nodes for each resistor object.
  */
-#define RESISTOR_NETLIST_NODES  2
+#define RESISTOR_NETLIST_NODES  		2
+#define RESISTOR_NETLIST_NODE_T1 		0
+#define RESISTOR_NETLIST_NODE_T2 		1
 
 /**
  * @brief  Resistor class
  */
 class Resistor : public Device {
 public:
-
-	/* define required data-types */
-	
-	/**
-	 * @brief  A node in the ResistanceType struct.
-	 * @note It can be casted to std::string.
-	 */
-	typedef unsigned int ResistanceNode;
-	
-	/**
-	 * @brief   The index of a netlist node.
-	 */
-	enum NetlistNodeIndex {
-		T1, /*!< T1 node index */
-		T2 /*!< T2 node index */
-	};
-
-	/**
-	 * @brief   Resistance values of the resistor.
-	 */
-	typedef struct {
-		ResistanceNode def; /*!< Default resistance value. */
-		ResistanceNode min; /*!< Minimum resistance value. */
-		ResistanceNode max; /*!< Maximum resistance value. */
-	} ResistanceType;
-
 	/* Public functions */
 	
 	/**
@@ -85,46 +62,26 @@ public:
 	virtual ~Resistor();
 
 	/**
-	 * @brief  Set a netlist node value.
-	 * @param  node: The index of the netlist node
-	 * @param value: netlist node value
-	 * @note Resistor has 2 nodes T1 and T2.
-	 * @note NetlistNode type can be casted to std::string.
-	 */
-	void setNetlistNode(NetlistNodeIndex node, NetlistNode value);
-	
-	/**
-	 * @brief  Get a netlist node value.
-	 * @param  node: The index of the netlist node
-	 * @retval Node value
-	 * @note Resistor has 2 nodes T1 and T2.
-	 * @note NetlistNode type can be casted to std::string.
-	 */
-	NetlistNode getNetlistNode(NetlistNodeIndex node);
-
-	/**
 	 * @brief  Set the resistance value of the resistor.
 	 * @param  def: Default resistance value
 	 * @param  min: Minimum resistance value
 	 * @param  max: Maximum resistance value
 	 * @retval None
 	 */
-	void setResistance(ResistanceNode def, ResistanceNode min, ResistanceNode max);
+	void setResistance(unsigned int def, unsigned int min, unsigned int max);
 
 	/**
 	 * @brief  Get the resistance values.
 	 * @param  None
-	 * @retval A pointer to the resistance struct. 
-	 * @note See ResistanceType.
+	 * @retval Resistance of the resistor.
+	 * @note See Resistance data type.
 	 */
-	const ResistanceType * getResistance();
+	Resistance getResistance();
 
 private:
-	/** Array of type NetlistNode to store the netlist nodes. */
-	NetlistNode netlist[RESISTOR_NETLIST_NODES];
 	
-	/** object of ResistanceType struct to store the resistance values. */
-	ResistanceType resistance;
+	/** object of Resistance data type to store the resistance values. */
+	Resistance resistance;
 };
 
 #endif /* RESISTOR_H_ */

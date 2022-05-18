@@ -34,6 +34,8 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "Topology.h"
 #include "Devices/Device.h"
 #include "Devices/Resistor.h"
+#include "Attributes/Resistance.h"
+#include "Attributes/Ml.h"
 
 /**
  * @brief   Contain APIs required to read electronic devices topology from a Json file, modify it and write it back.
@@ -120,7 +122,7 @@ public:
 	 * @param   node_id: ID of the node to search for.
 	 * @retval  A list of devices. See DeviceList data type.
 	 */
-	static Topology::DeviceList queryDevicesWithNetlistNode(Topology::TopologyIdType topology_id, Device::NetlistNode node_id);
+	static Topology::DeviceList queryDevicesWithNetlistNode(Topology::TopologyIdType topology_id, std::string node_id);
 
 private:
 

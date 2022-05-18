@@ -29,6 +29,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* ------ Include ------ */
 #include <string>
+#include "Attributes/Netlist.h"
 
 /**
  * @brief  Device class
@@ -36,12 +37,6 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 class Device {
 public:
 	/* define required data-types */
-	
-	/**
-	 * @brief  A netlist node data type
-	 * @note It can be casted to std::string.
-	 */
-	typedef std::string NetlistNode;
 	
 	/**
 	 * @brief  Device ID data type.
@@ -95,18 +90,32 @@ public:
 	 */
 	DeviceType getType();
 
+	/**
+	 * @brief  Set netlist node value.
+	 * @param  index: Index of the node.
+	 * @param  value: Value of the node.
+	 * @retval None
+	 */
+	void setNetlistNode(int index, std::string value);
+
+	/**
+	 * @brief  Set netlist node value.
+	 * @param  index: Index of the node.
+	 * @retval Value of the node.
+	 */
+	std::string getNetlistNode(int index);
 
 protected:
-
-	/* declare the netlist object */
-	struct Netlist;
 
 	/** Type of the device class */
 	DeviceType type;
 
+	/** Netlist object */
+	Netlist * netlist;
+
 private:
 
-	/** object of DeviceIdType to store the device ID */
+	/** Object of DeviceIdType to store the device ID */
 	DeviceIdType id;
 
 

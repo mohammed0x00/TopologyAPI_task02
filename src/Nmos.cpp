@@ -30,67 +30,28 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* ------ Functions ------ */
 /* Reinitialize the device type as nmos */
-Nmos::Nmos() {
+Nmos::Nmos()
+{
 	type = nmos;
+	netlist = new Netlist(NMOS_NETLIST_NODES);
 }
 
-/* Empty destructor */
-Nmos::~Nmos() {
-
-}
-
-/* Set a node in the netlist. The node is pointed by NetlistNodeIndex node */
-/* The argument NetlistNode value can be casted to string */
-void Nmos::setNetlistNode(NetlistNodeIndex node, NetlistNode value)
+/* Delete netlist object */
+Nmos::~Nmos()
 {
-	/* store {drain, gate, source} in netlist array in the same order */
-	switch(node)
-	{
-	case drain:
-		netlist[0] = value;
-		break;
-	case gate:
-		netlist[1] = value;
-		break;
-	case source:
-		netlist[2] = value;
-		break;
-	}
+	delete netlist;
 }
-
-/* Returns the node in of netlist that is pointed by NetlistNodeIndex node */
-Nmos::NetlistNode Nmos::getNetlistNode(Nmos::NetlistNodeIndex node)
-{
-	/* read {drain, gate, source} from netlist array in the same order */
-	NetlistNode toReturn;
-	switch(node)
-	{
-	case drain:
-		toReturn = netlist[0];
-		break;
-	case gate:
-		toReturn = netlist[1];
-		break;
-	case source:
-		toReturn = netlist[2];
-		break;
-	}
-	return toReturn;
-}
-
 
 /* Set M(l) of the Nmos */
-void Nmos::setMl(MlNode def, MlNode min, MlNode max)
+void Nmos::setMl(double def, double min, double max)
 {
-	/* Write values to ml struct of the class */
-	ml.def = def;
-	ml.min = min;
-	ml.max = max;
+	ml.setDefaultValue(def);
+	ml.setMinimumValue(min);
+	ml.setMaximumValue(max);
 }
 
-/* Returns a struct of MlType that represents M(l) */
-const Nmos::MlType * Nmos::getMl()
+/* Returns an object of Ml data type that represents M(l) */
+Ml Nmos::getMl()
 {
-	/* Return the address of ml struct as a pointer to a constant */
-	return &ml;
+	return ml;
 }
