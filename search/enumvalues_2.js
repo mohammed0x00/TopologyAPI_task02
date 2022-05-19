@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gate_0',['gate',['../class_nmos.html#aef8d3d0f1eb5bc881f29368f7f674167ac6687345620ceeca6c8bb7ab77c7c488',1,'Nmos']]]
+  ['nmos_0',['nmos',['../class_device.html#a9d8aefb892f59ac01f6a754b3559d702a08c70a90d258435ecb963ea8e68ca572',1,'Device']]]
 ];

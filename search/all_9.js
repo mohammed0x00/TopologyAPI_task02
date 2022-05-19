@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['setid_0',['setId',['../class_topology.html#ad1b07d2bb8a5a4e60fa1c305a90c5031',1,'Topology']]],
-  ['setid_1',['setID',['../class_device.html#aa80393e3da00eb149165f73d99048a35',1,'Device']]],
-  ['setml_2',['setMl',['../class_nmos.html#a75ece1f797f7b22f969c7e68963b5b4b',1,'Nmos']]],
-  ['setnetlistnode_3',['setNetlistNode',['../class_nmos.html#a3d44c0fb3bd14e5e8a39dc40575e3eb4',1,'Nmos::setNetlistNode()'],['../class_resistor.html#a87bc458fa73969e2cb8fcbbc8760b844',1,'Resistor::setNetlistNode(NetlistNodeIndex node, NetlistNode value)']]],
-  ['setresistance_4',['setResistance',['../class_resistor.html#abb8be89442439c90fc5134e7b741b806',1,'Resistor']]],
-  ['size_5',['size',['../struct_a_p_i_1_1_topology_list_struct.html#a6af94ae3da5e0cc59195855ba2ee8751',1,'API::TopologyListStruct::size()'],['../struct_topology_1_1_device_list_struct.html#a3e7a7d1169b9d2d623f56586c2e35065',1,'Topology::DeviceListStruct::size()']]],
-  ['source_6',['source',['../class_nmos.html#aef8d3d0f1eb5bc881f29368f7f674167af63b418183e3c0903cbe769bf0a45a9b',1,'Nmos']]]
+  ['setdefaultvalue_0',['setDefaultValue',['../class_ml.html#af2db6c7577fd16d6e65117b488f94817',1,'Ml::setDefaultValue()'],['../class_resistance.html#ac0b415c7e6821133ca104492082e40fb',1,'Resistance::setDefaultValue()']]],
+  ['setid_1',['setId',['../class_topology.html#ad1b07d2bb8a5a4e60fa1c305a90c5031',1,'Topology']]],
+  ['setid_2',['setID',['../class_device.html#aa80393e3da00eb149165f73d99048a35',1,'Device']]],
+  ['setmaximumvalue_3',['setMaximumValue',['../class_ml.html#ad021345fbf1f7b4d78f40403c52c91eb',1,'Ml::setMaximumValue()'],['../class_resistance.html#aabe44c9e75dfcc7948124bec485e366d',1,'Resistance::setMaximumValue()']]],
+  ['setminimumvalue_4',['setMinimumValue',['../class_ml.html#a89a66ab5dfeb72d3d8525ccc0256d7f0',1,'Ml::setMinimumValue()'],['../class_resistance.html#a4a59079ba00ca8b674295f5b24b011c8',1,'Resistance::setMinimumValue()']]],
+  ['setml_5',['setMl',['../class_nmos.html#aa17819e59b92c7f3d090e66fdc5d8fc2',1,'Nmos']]],
+  ['setnetlistnode_6',['setNetlistNode',['../class_device.html#a28b35a0741ee54967d22f227e921f0e5',1,'Device']]],
+  ['setnode_7',['setNode',['../class_netlist.html#a5f4cee5cc63315b68d9e9c9063905e73',1,'Netlist']]],
+  ['setresistance_8',['setResistance',['../class_resistor.html#af571bdce7980513ffac33c4d32c45318',1,'Resistor']]],
+  ['size_9',['size',['../struct_a_p_i_1_1_topology_list_struct.html#a6af94ae3da5e0cc59195855ba2ee8751',1,'API::TopologyListStruct::size()'],['../struct_topology_1_1_device_list_struct.html#a3e7a7d1169b9d2d623f56586c2e35065',1,'Topology::DeviceListStruct::size()']]]
 ];

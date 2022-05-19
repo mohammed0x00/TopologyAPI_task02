@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['resistancetype_0',['ResistanceType',['../struct_resistor_1_1_resistance_type.html',1,'Resistor']]],
+  ['resistance_0',['Resistance',['../class_resistance.html',1,'']]],
   ['resistor_1',['Resistor',['../class_resistor.html',1,'']]]
 ];

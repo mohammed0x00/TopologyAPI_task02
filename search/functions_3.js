@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nmos_0',['Nmos',['../class_nmos.html#a676ce57255e310575e5fbe12d20c446a',1,'Nmos']]]
+  ['ml_0',['Ml',['../class_ml.html#a43c281cd19fee0787260fb581a82fdd6',1,'Ml::Ml()'],['../class_ml.html#a667405f038ee7534d54eeb377a538ff9',1,'Ml::Ml(double def, double min, double max)']]]
 ];

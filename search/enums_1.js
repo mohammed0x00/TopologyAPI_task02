@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['netlistnodeindex_0',['NetlistNodeIndex',['../class_nmos.html#aef8d3d0f1eb5bc881f29368f7f674167',1,'Nmos::NetlistNodeIndex()'],['../class_resistor.html#a58d5f7c3425ed1a51405bd15c5748822',1,'Resistor::NetlistNodeIndex()']]]
+  ['result_0',['Result',['../class_a_p_i.html#a034fd97528af77c64cd6185e16e0e3e9',1,'API']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mltype_0',['MlType',['../struct_nmos_1_1_ml_type.html',1,'Nmos']]]
+  ['ml_0',['Ml',['../class_ml.html',1,'']]]
 ];
