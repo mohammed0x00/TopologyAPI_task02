@@ -1,26 +1,32 @@
 make: Entering directory '/home/mohammed/TopologyAPI_task02/build'
 Running tests...
 Test project /home/mohammed/TopologyAPI_task02/build
-    Start 1: API.ReadJSONTest
-1/9 Test #1: API.ReadJSONTest ..................   Passed    0.00 sec
-    Start 2: API.TopologyListSizeTest
-2/9 Test #2: API.TopologyListSizeTest ..........   Passed    0.00 sec
-    Start 3: API.SetAndGetIDTest
-3/9 Test #3: API.SetAndGetIDTest ...............   Passed    0.01 sec
-    Start 4: API.QueryDevicesTest
-4/9 Test #4: API.QueryDevicesTest ..............   Passed    0.00 sec
-    Start 5: API.SetAndGetDeviceIDTest
-5/9 Test #5: API.SetAndGetDeviceIDTest .........   Passed    0.00 sec
-    Start 6: API.QueryDevicesAPITest
-6/9 Test #6: API.QueryDevicesAPITest ...........   Passed    0.01 sec
-    Start 7: API.DeviceListSizeTest
-7/9 Test #7: API.DeviceListSizeTest ............   Passed    0.00 sec
-    Start 8: API.QueryDevicesWithNetlistNode
-8/9 Test #8: API.QueryDevicesWithNetlistNode ...   Passed    0.00 sec
-    Start 9: API.WriteJSONTest
-9/9 Test #9: API.WriteJSONTest .................   Passed    0.00 sec
+      Start  1: API.ReadJSONTest
+ 1/12 Test  #1: API.ReadJSONTest ....................   Passed    0.01 sec
+      Start  2: API.TopologyListSizeTest
+ 2/12 Test  #2: API.TopologyListSizeTest ............   Passed    0.01 sec
+      Start  3: API.SetAndGetIDTest
+ 3/12 Test  #3: API.SetAndGetIDTest .................   Passed    0.00 sec
+      Start  4: API.QueryDevicesTest
+ 4/12 Test  #4: API.QueryDevicesTest ................   Passed    0.00 sec
+      Start  5: API.SetAndGetDeviceIDTest
+ 5/12 Test  #5: API.SetAndGetDeviceIDTest ...........   Passed    0.01 sec
+      Start  6: API.QueryDevicesAPITest
+ 6/12 Test  #6: API.QueryDevicesAPITest .............   Passed    0.01 sec
+      Start  7: API.DeviceListSizeTest
+ 7/12 Test  #7: API.DeviceListSizeTest ..............   Passed    0.00 sec
+      Start  8: API.QueryDevicesWithNetlistNode
+ 8/12 Test  #8: API.QueryDevicesWithNetlistNode .....   Passed    0.00 sec
+      Start  9: API.WriteJSONTest
+ 9/12 Test  #9: API.WriteJSONTest ...................   Passed    0.01 sec
+      Start 10: jsoncpp_readerwriter
+10/12 Test #10: jsoncpp_readerwriter ................   Passed    2.36 sec
+      Start 11: jsoncpp_readerwriter_json_checker
+11/12 Test #11: jsoncpp_readerwriter_json_checker ...   Passed    3.10 sec
+      Start 12: jsoncpp_test
+12/12 Test #12: jsoncpp_test ........................   Passed    0.03 sec
 
-100% tests passed, 0 tests failed out of 9
+100% tests passed, 0 tests failed out of 12
 
-Total Test time (real) =   0.05 sec
+Total Test time (real) =   5.55 sec
 make: Leaving directory '/home/mohammed/TopologyAPI_task02/build'

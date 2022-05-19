@@ -1,14 +1,235 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Python: /usr/bin/python3.8 (found version "3.8.10") found components: Interpreter 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- JsonCpp Version: 1.9.5
+-- Looking for C++ include clocale
+-- Looking for C++ include clocale - found
+-- Looking for localeconv
+-- Looking for localeconv - found
+-- Looking for C++ include sys/types.h
+-- Looking for C++ include sys/types.h - found
+-- Looking for C++ include stdint.h
+-- Looking for C++ include stdint.h - found
+-- Looking for C++ include stddef.h
+-- Looking for C++ include stddef.h - found
+-- Check size of lconv
+-- Check size of lconv - done
+-- Performing Test HAVE_DECIMAL_POINT
+-- Performing Test HAVE_DECIMAL_POINT - Success
+-- Found Python3: /usr/bin/python3.8 (found version "3.8.10") found components: Interpreter 
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/mohammed/TopologyAPI_task02/build
-[  6%] Built target Json
+Scanning dependencies of target jsoncpp_static
+[  2%] Building CXX object _deps/jsoncpp-build/src/lib_json/CMakeFiles/jsoncpp_static.dir/json_reader.cpp.o
+[  4%] Building CXX object _deps/jsoncpp-build/src/lib_json/CMakeFiles/jsoncpp_static.dir/json_value.cpp.o
+[  6%] Building CXX object _deps/jsoncpp-build/src/lib_json/CMakeFiles/jsoncpp_static.dir/json_writer.cpp.o
+[  9%] Linking CXX static library ../../../../lib/libjsoncpp.a
+[  9%] Built target jsoncpp_static
+Scanning dependencies of target gtest
+[ 11%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[ 13%] Linking CXX static library ../../../lib/libgtest.a
 [ 13%] Built target gtest
-[ 20%] Built target gtest_main
-[ 51%] Built target TopologyAPI
-[ 58%] Built target Resistor_test
-[ 65%] Built target Nmos_test
-[ 72%] Built target Device_test
-[ 79%] Built target Topology_test
-[ 86%] Built target API_test
-[ 93%] Built target gmock
-[100%] Built target gmock_main
+Scanning dependencies of target gtest_main
+[ 15%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[ 18%] Linking CXX static library ../../../lib/libgtest_main.a
+[ 18%] Built target gtest_main
+Scanning dependencies of target TopologyAPI
+[ 20%] Building CXX object src/CMakeFiles/TopologyAPI.dir/API.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/TopologyAPI.dir/Device.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/TopologyAPI.dir/Ml.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/TopologyAPI.dir/Netlist.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/TopologyAPI.dir/Nmos.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/TopologyAPI.dir/Resistance.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/TopologyAPI.dir/Resistor.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/TopologyAPI.dir/Topology.cpp.o
+[ 38%] Linking CXX static library libTopologyAPI.a
+[ 38%] Built target TopologyAPI
+Scanning dependencies of target Resistor_test
+[ 40%] Building CXX object CMakeFiles/Resistor_test.dir/test/Resistor_test.cpp.o
+[ 43%] Linking CXX executable bin/Resistor_test
+[ 43%] Built target Resistor_test
+Scanning dependencies of target Nmos_test
+[ 45%] Building CXX object CMakeFiles/Nmos_test.dir/test/Nmos_test.cpp.o
+[ 47%] Linking CXX executable bin/Nmos_test
+[ 47%] Built target Nmos_test
+Scanning dependencies of target Device_test
+[ 50%] Building CXX object CMakeFiles/Device_test.dir/test/Device_test.cpp.o
+[ 52%] Linking CXX executable bin/Device_test
+[ 52%] Built target Device_test
+Scanning dependencies of target Topology_test
+[ 54%] Building CXX object CMakeFiles/Topology_test.dir/test/Topology_test.cpp.o
+[ 56%] Linking CXX executable bin/Topology_test
+[ 56%] Built target Topology_test
+Scanning dependencies of target API_test
+[ 59%] Building CXX object CMakeFiles/API_test.dir/test/API_test.cpp.o
+[ 61%] Linking CXX executable bin/API_test
+[ 61%] Built target API_test
+Scanning dependencies of target gmock
+[ 63%] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[ 65%] Linking CXX static library ../../../lib/libgmock.a
+[ 65%] Built target gmock
+Scanning dependencies of target gmock_main
+[ 68%] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[ 70%] Linking CXX static library ../../../lib/libgmock_main.a
+[ 70%] Built target gmock_main
+Scanning dependencies of target jsoncpp_object
+[ 72%] Building CXX object _deps/jsoncpp-build/src/lib_json/CMakeFiles/jsoncpp_object.dir/json_reader.cpp.o
+[ 75%] Building CXX object _deps/jsoncpp-build/src/lib_json/CMakeFiles/jsoncpp_object.dir/json_value.cpp.o
+[ 77%] Building CXX object _deps/jsoncpp-build/src/lib_json/CMakeFiles/jsoncpp_object.dir/json_writer.cpp.o
+[ 77%] Built target jsoncpp_object
+Scanning dependencies of target jsoncpp_lib
+[ 79%] Building CXX object _deps/jsoncpp-build/src/lib_json/CMakeFiles/jsoncpp_lib.dir/json_reader.cpp.o
+[ 81%] Building CXX object _deps/jsoncpp-build/src/lib_json/CMakeFiles/jsoncpp_lib.dir/json_value.cpp.o
+[ 84%] Building CXX object _deps/jsoncpp-build/src/lib_json/CMakeFiles/jsoncpp_lib.dir/json_writer.cpp.o
+[ 86%] Linking CXX shared library ../../../../lib/libjsoncpp.so
+[ 86%] Built target jsoncpp_lib
+Scanning dependencies of target jsontestrunner_exe
+[ 88%] Building CXX object _deps/jsoncpp-build/src/jsontestrunner/CMakeFiles/jsontestrunner_exe.dir/main.cpp.o
+[ 90%] Linking CXX executable ../../../../bin/jsontestrunner_exe
+[ 90%] Built target jsontestrunner_exe
+Scanning dependencies of target jsoncpp_test
+[ 93%] Building CXX object _deps/jsoncpp-build/src/test_lib_json/CMakeFiles/jsoncpp_test.dir/jsontest.cpp.o
+[ 95%] Building CXX object _deps/jsoncpp-build/src/test_lib_json/CMakeFiles/jsoncpp_test.dir/fuzz.cpp.o
+[ 97%] Building CXX object _deps/jsoncpp-build/src/test_lib_json/CMakeFiles/jsoncpp_test.dir/main.cpp.o
+[100%] Linking CXX executable ../../../../bin/jsoncpp_test
+Testing ValueTest/checkNormalizeFloatingPointStr: OK
+Testing ValueTest/memberCount: OK
+Testing ValueTest/objects: OK
+Testing ValueTest/arrays: OK
+Testing ValueTest/resizeArray: OK
+Testing ValueTest/resizePopulatesAllMissingElements: OK
+Testing ValueTest/getArrayValue: OK
+Testing ValueTest/arrayIssue252: OK
+Testing ValueTest/arrayInsertAtRandomIndex: OK
+Testing ValueTest/null: OK
+Testing ValueTest/strings: OK
+Testing ValueTest/bools: OK
+Testing ValueTest/integers: OK
+Testing ValueTest/nonIntegers: OK
+Testing ValueTest/compareNull: OK
+Testing ValueTest/compareInt: OK
+Testing ValueTest/compareUInt: OK
+Testing ValueTest/compareDouble: OK
+Testing ValueTest/compareString: OK
+Testing ValueTest/compareBoolean: OK
+Testing ValueTest/compareArray: OK
+Testing ValueTest/compareObject: OK
+Testing ValueTest/compareType: OK
+Testing ValueTest/CopyObject: OK
+Testing ValueTest/typeChecksThrowExceptions: OK
+Testing ValueTest/offsetAccessors: OK
+Testing ValueTest/StaticString: OK
+Testing ValueTest/WideString: OK
+Testing ValueTest/CommentBefore: OK
+Testing ValueTest/zeroes: OK
+Testing ValueTest/zeroesInKeys: OK
+Testing ValueTest/specialFloats: OK
+Testing ValueTest/precision: OK
+Testing ValueTest/searchValueByPath: OK
+Testing FastWriterTest/dropNullPlaceholders: OK
+Testing FastWriterTest/enableYAMLCompatibility: OK
+Testing FastWriterTest/omitEndingLineFeed: OK
+Testing FastWriterTest/writeNumericValue: OK
+Testing FastWriterTest/writeArrays: OK
+Testing FastWriterTest/writeNestedObjects: OK
+Testing StyledWriterTest/writeNumericValue: OK
+Testing StyledWriterTest/writeArrays: OK
+Testing StyledWriterTest/writeNestedObjects: OK
+Testing StyledWriterTest/multiLineArray: OK
+Testing StyledWriterTest/writeValueWithComment: OK
+Testing StyledStreamWriterTest/writeNumericValue: OK
+Testing StyledStreamWriterTest/writeArrays: OK
+Testing StyledStreamWriterTest/writeNestedObjects: OK
+Testing StyledStreamWriterTest/multiLineArray: OK
+Testing StyledStreamWriterTest/writeValueWithComment: OK
+Testing StreamWriterTest/writeNumericValue: OK
+Testing StreamWriterTest/writeArrays: OK
+Testing StreamWriterTest/writeNestedObjects: OK
+Testing StreamWriterTest/multiLineArray: OK
+Testing StreamWriterTest/dropNullPlaceholders: OK
+Testing StreamWriterTest/enableYAMLCompatibility: OK
+Testing StreamWriterTest/indentation: OK
+Testing StreamWriterTest/writeZeroes: OK
+Testing StreamWriterTest/unicode: OK
+Testing StreamWriterTest/escapeControlCharacters: OK
+Testing ReaderTest/parseWithNoErrors: OK
+Testing ReaderTest/parseObject: OK
+Testing ReaderTest/parseArray: OK
+Testing ReaderTest/parseString: OK
+Testing ReaderTest/parseComment: OK
+Testing ReaderTest/streamParseWithNoErrors: OK
+Testing ReaderTest/parseWithNoErrorsTestingOffsets: OK
+Testing ReaderTest/parseWithOneError: OK
+Testing ReaderTest/parseSpecialFloat: OK
+Testing ReaderTest/strictModeParseNumber: OK
+Testing ReaderTest/parseChineseWithOneError: OK
+Testing ReaderTest/parseWithDetailError: OK
+Testing ReaderTest/pushErrorTest: OK
+Testing ReaderTest/allowNumericKeysTest: OK
+Testing CharReaderTest/parseWithNoErrors: OK
+Testing CharReaderTest/parseWithNoErrorsTestingOffsets: OK
+Testing CharReaderTest/parseNumber: OK
+Testing CharReaderTest/parseString: OK
+Testing CharReaderTest/parseComment: OK
+Testing CharReaderTest/parseObjectWithErrors: OK
+Testing CharReaderTest/parseArrayWithErrors: OK
+Testing CharReaderTest/parseWithOneError: OK
+Testing CharReaderTest/parseChineseWithOneError: OK
+Testing CharReaderTest/parseWithDetailError: OK
+Testing CharReaderTest/parseWithStackLimit: OK
+Testing CharReaderTest/testOperator: OK
+Testing CharReaderStrictModeTest/dupKeys: OK
+Testing CharReaderFailIfExtraTest/issue164: OK
+Testing CharReaderFailIfExtraTest/issue107: OK
+Testing CharReaderFailIfExtraTest/commentAfterObject: OK
+Testing CharReaderFailIfExtraTest/commentAfterArray: OK
+Testing CharReaderFailIfExtraTest/commentAfterBool: OK
+Testing CharReaderFailIfExtraTest/parseComment: OK
+Testing CharReaderAllowDropNullTest/issue178: OK
+Testing CharReaderAllowNumericKeysTest/allowNumericKeys: OK
+Testing CharReaderAllowSingleQuotesTest/issue182: OK
+Testing CharReaderAllowZeroesTest/issue176: OK
+Testing CharReaderAllowSpecialFloatsTest/specialFloat: OK
+Testing CharReaderAllowSpecialFloatsTest/issue209: OK
+Testing EscapeSequenceTest/readerParseEscapeSequence: OK
+Testing EscapeSequenceTest/charReaderParseEscapeSequence: OK
+Testing EscapeSequenceTest/writeEscapeSequence: OK
+Testing BuilderTest/settings: OK
+Testing BomTest/skipBom: OK
+Testing BomTest/notSkipBom: OK
+Testing IteratorTest/convert: OK
+Testing IteratorTest/decrement: OK
+Testing IteratorTest/reverseIterator: OK
+Testing IteratorTest/distance: OK
+Testing IteratorTest/nullValues: OK
+Testing IteratorTest/staticStringKey: OK
+Testing IteratorTest/names: OK
+Testing IteratorTest/indexes: OK
+Testing IteratorTest/constness: OK
+Testing RValueTest/moveConstruction: OK
+Testing FuzzTest/fuzzDoesntCrash: OK
+Testing MemberTemplateAs/BehavesSameAsNamedAs: OK
+Testing MemberTemplateIs/BehavesSameAsNamedIs: OK
+Testing VersionTest/VersionNumbersMatch: OK
+All 119 tests passed
+[100%] Built target jsoncpp_test

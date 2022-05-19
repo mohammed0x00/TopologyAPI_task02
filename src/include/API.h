@@ -30,7 +30,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 /* ------ Include ------ */
 #include <vector>
 #include "json/json.h"
-#include "json/json-forwards.h"
+//#include "json/json-forwards.h"
 #include "Topology.h"
 #include "Devices/Device.h"
 #include "Devices/Resistor.h"
