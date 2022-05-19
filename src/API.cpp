@@ -29,6 +29,7 @@ this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* ------ Include ------ */
 #include "API.h"
+#include "json/json.h"
 
 /* ------ Variables ------ */
 std::vector<Topology *> API::topologies;
